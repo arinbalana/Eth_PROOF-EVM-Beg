@@ -46,4 +46,5 @@
         totalSupply -= _value;
         balances[_from] -= _value;
     }
-}
+    }
+
