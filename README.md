@@ -1,4 +1,4 @@
-# Eth_PROOF-EVM-Beg
+
 /*
        REQUIREMENTS
     1. Your contract will have public variables that store the details about your coin (Token Name, Token Abbrv., Total Supply)
@@ -15,17 +15,24 @@
 
 
 
-// SPDX-License-Identifier: MIT
-pragma solidity 0.8.18;
 
-contract MyToken {
+       // SPDX-License-Identifier: MIT
+       pragma solidity 0.8.18;
+
+
+
+    contract MyToken {
     // Public variables to store the details about the coin
     string public tokenName = "MyToken";
     string public tokenAbbrv = "MTK";
     uint256 public totalSupply;
 
+    
+
     // Mapping to store balances of addresses
     mapping(address => uint256) public balances;
+
+    
 
     // Mint function to increase total supply and the balance of the sender
     function mint(address _to, uint256 _value) public {
