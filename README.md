@@ -1,50 +1,28 @@
+This Solidity program is a simple "Hello World" program that demonstrates the basic syntax and functionality of the Solidity programming language. The purpose of this program is to serve as a starting point for those who are new to Solidity and want to get a feel for how it works.
 
-/*
-       REQUIREMENTS
-    1. Your contract will have public variables that store the details about your coin (Token Name, Token Abbrv., Total Supply)
-    2. Your contract will have a mapping of addresses to balances (address => uint)
-    3. You will have a mint function that takes two parameters: an address and a value. 
-       The function then increases the total supply by that number and increases the balance 
-       of the “sender” address by that amount
-    4. Your contract will have a burn function, which works the opposite of the mint function, as it will destroy tokens. 
-       It will take an address and value just like the mint functions. It will then deduct the value from the total supply 
-       and from the balance of the “sender”.
-    5. Lastly, your burn function should have conditionals to make sure the balance of "sender" is greater than or equal 
-       to the amount that is supposed to be burned.
-*/
+Description 
+This program is a simple contract written in Solidity, a programming language used for developing smart contracts on the Ethereum blockchain. The contract has a single function that returns the string "Hello World!". This program serves as a simple and straightforward introduction to Solidity programming, and can be used as a stepping stone for more complex projects in the future.
 
+Executing program
+To run this program, you can use Remix, an online Solidity IDE. To get started, go to the Remix website at https://remix.ethereum.org/. Once you are on the Remix website, create a new file by clicking on the "+" icon in the left-hand sidebar. Save the file with a .sol extension (e.g., HelloWorld.sol). Copy and paste the following code into the file: javascript pragma solidity ^0.8.4;
 
+        contract HelloWorld {
+        function sayHello() public pure returns (string memory) {
+        return "Hello World!";
+         }
+        }
+-- Select the "Solidity Compiler" tab from the sidebar on the left to begin compiling the code. Click the "Compile HelloWorld.sol" button after ensuring that the "Compiler" option is set to"0.8.4" (or another suitable version).
 
+-- Selecting the "Deploy & Run Transactions" tab from the left-hand sidebar will allow you to deploy the contract after the code has been compiled. From the dropdown menu, choose the "HelloWorld" contract, and then press the "Deploy" button.
 
-       // SPDX-License-Identifier: MIT
-       pragma solidity 0.8.18;
+-- You can communicate with the contract by using the sayHello method once it has been deployed. Select the "sayHello" function by clicking on it after selecting the "HelloWorld" contract in the left-hand sidebar. Lastly, to run the function and get the "Hello World!" message, click the "transact" button.
 
+Mentors
+Metacrafter Chris
+@metacraftersio
 
+Authors
+Arin 22BCS15055
 
-    contract MyToken {
-    // Public variables to store the details about the coin
-    string public tokenName = "MyToken";
-    string public tokenAbbrv = "MTK";
-    uint256 public totalSupply;
-
-    
-
-    // Mapping to store balances of addresses
-    mapping(address => uint256) public balances;
-
-    
-
-    // Mint function to increase total supply and the balance of the sender
-    function mint(address _to, uint256 _value) public {
-        totalSupply += _value;
-        balances[_to] += _value;
-    }
-
-    // Burn function to decrease total supply and the balance of the sender
-    function burn(address _from, uint256 _value) public {
-        require(balances[_from] >= _value, ">>> Insufficient balance to BURN! <<<");
-        totalSupply -= _value;
-        balances[_from] -= _value;
-    }
-    }
-
+License
+This project is licensed under the MIT License - see the LICENSE.md file for details
